@@ -1,0 +1,8 @@
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: deepshield
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

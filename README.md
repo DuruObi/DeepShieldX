@@ -1,11 +1,48 @@
-<div align="center">
+# DeepShieldX
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+**Real-Time Deepfake & Scam Detection Shield**  
 
-  <h1>Built with AI Studio</h2>
+DeepShieldX is an MVP that provides a personal shield for users and an enterprise API for detecting:
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- AI-generated voices
+- Deepfake videos
+- Fraudulent images
+- Scam messages
+- Suspicious URLs
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+It alerts users **before they get fooled**, logs scans, and is fully modular for future AI integration.
 
-</div>
+---
+
+## Features (MVP)
+
+- Voice deepfake detection (stub)
+- Video deepfake detection (stub)
+- Image deepfake detection (stub)
+- Message scam detection
+- URL phishing detection
+- Heatmap / forensic artifacts
+- Postgres scan logging
+- API key authentication
+- Dockerized microservices
+- Ready for web/mobile integration
+
+---
+
+## Architecture
+
+
+- **API Gateway**: Routes requests to AI Engine, authenticates with API keys.
+- **AI Engine**: Processes uploaded audio/video/images/text/URLs. Returns deepfake/scam probabilities.
+- **Postgres**: Logs every scan for analytics.
+- **Docker**: Runs AI Engine, API Gateway, and Postgres together.
+
+---
+
+## Local Setup (MVP)
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/DuruObi/DeepShieldX.git
+cd DeepShieldX
