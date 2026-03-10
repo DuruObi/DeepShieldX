@@ -1,3 +1,6 @@
+version: "3.8"
+
+services:
   postgres:
     image: postgres:13
     environment:
@@ -6,3 +9,21 @@
       POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
+
+  ai-engine:
+    build:
+      context: ./ai-engine
+    ports:
+      - "8500:8500"
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+    environment:
+      API_KEY: deepshield-local-key
+      AI_ENGINE_URL: http://ai-engine:8500
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ai-engine
+      - postgres
