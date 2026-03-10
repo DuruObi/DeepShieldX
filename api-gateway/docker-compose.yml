@@ -11,12 +11,17 @@ services:
       - "5432:5432"
 
   ai-engine:
-    build: ./ai-engine
+    build:
+      context: ../ai-engine
     ports:
       - "8500:8500"
 
   api-gateway:
-    build: ./api-gateway
+    build:
+      context: .
+    environment:
+      API_KEY: deepshield-local-key
+      AI_ENGINE_URL: http://ai-engine:8500
     ports:
       - "8000:8000"
     depends_on:
